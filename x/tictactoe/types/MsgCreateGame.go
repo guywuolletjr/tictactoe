@@ -9,24 +9,18 @@ import (
 var _ sdk.Msg = &MsgCreateGame{}
 
 type MsgCreateGame struct {
-  ID      string
-  Creator sdk.AccAddress `json:"creator" yaml:"creator"`
-  Id string `json:"Id" yaml:"Id"`
-  Player1 string `json:"Player1" yaml:"Player1"`
-  Player2 string `json:"Player2" yaml:"Player2"`
-  Board string `json:"Board" yaml:"Board"`
-  Winner string `json:"Winner" yaml:"Winner"`
+	ID      string      		`json:"id" yaml:"id"`
+  Creator sdk.AccAddress 	`json:"creator" yaml:"creator"`
+  Player1 sdk.AccAddress 	`json:"Player1" yaml:"Player1"`
+  Player2 sdk.AccAddress 	`json:"Player2" yaml:"Player2"`
 }
 
-func NewMsgCreateGame(creator sdk.AccAddress, Id string, Player1 string, Player2 string, Board string, Winner string) MsgCreateGame {
+func NewMsgCreateGame(creator sdk.AccAddress, id string, Player1 sdk.AccAddress, Player2 sdk.AccAddress) MsgCreateGame {
   return MsgCreateGame{
-    ID: uuid.New().String(),
+    ID: id,
 		Creator: creator,
-    Id: Id,
     Player1: Player1,
     Player2: Player2,
-    Board: Board,
-    Winner: Winner,
 	}
 }
 

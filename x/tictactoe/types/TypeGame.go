@@ -12,3 +12,19 @@ type Game struct {
     Board 	[9]uint 				`json:"Board" yaml:"Board"`
     Winner 	uint 						`json:"Winner" yaml:"Winner"`
 }
+
+func (s Game) String() string {
+	return strings.TrimSpace(fmt.Sprintf(`Creator: %s
+	ID: %s
+	Player1: %s
+	Player2: %s
+	Board: %s
+	Winner: %s`,
+		s.Creator,
+		s.ID,
+		s.Player1,
+		s.Player2,
+		s.Board,
+		s.Winner,
+	))
+}

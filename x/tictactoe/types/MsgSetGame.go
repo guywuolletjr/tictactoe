@@ -23,23 +23,6 @@ func NewMsgSetGame(creator sdk.AccAddress, id string, Player1 sdk.AccAddress, Pl
 	}
 }
 
-type MsgPlayGame struct {
-	ID      	string      		`json:"id" yaml:"id"`
-	Creator 	sdk.AccAddress 	`json:"creator" yaml:"creator"`
-	Player 		sdk.AccAddress 	`json:"Player" yaml:"Player"`
-	Move			uint 						`json:"Move" yaml:"Move"`
-}
-
-func NewMsgPlayGame(creator sdk.AccAddress, id string, Player sdk.AccAddress, Move uint) MsgSetGame {
-  return MsgSetGame{
-    ID: id,
-		Creator: creator,
-    Player: Player,
-    Move: Move,
-	}
-}
-
-
 func (msg MsgSetGame) Route() string {
   return RouterKey
 }
