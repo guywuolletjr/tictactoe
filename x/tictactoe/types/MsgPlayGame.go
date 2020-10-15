@@ -21,7 +21,6 @@ func NewMsgPlayGame(id string, Player sdk.AccAddress, Move uint) MsgPlayGame {
 	}
 }
 
-
 func (msg MsgPlayGame) Route() string {
   return RouterKey
 }
